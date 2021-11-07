@@ -55,3 +55,7 @@ path = "random/shudder.rs"
 [[example]]
 name = "balloon"
 path = "variable/balloon.rs"
+
+[[example]]
+name = "move-balloon"
+path = "variable/moving_balloon.rs"
