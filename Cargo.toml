@@ -71,3 +71,7 @@ path = "variable/bool_light.rs"
 [[example]]
 name = "random-walk"
 path = "variable/random_walk.rs"
+
+[[example]]
+name = "multi-pen"
+path = "variable/multi_pen.rs"
