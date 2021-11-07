@@ -27,3 +27,7 @@ path = "conditional/second_pen.rs"
 [[example]]
 name = "patterns"
 path = "conditional/patterns.rs"
+
+[[example]]
+name = "animation-mouse"
+path = "animation/mouse.rs"
