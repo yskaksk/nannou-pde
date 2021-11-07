@@ -6,8 +6,7 @@ fn main() {
 
 #[derive(Clone)]
 struct Line {
-    points: Vec<Point2>,
-    button: Option<MouseButton>
+    points: Vec<Point2>, button: Option<MouseButton>
 }
 
 impl Line {
