@@ -8,20 +8,20 @@ fn main() {
 enum Mode {
     YX,
     Fixed,
-    Gradient
+    Gradient,
 }
 
 #[derive(Clone)]
 struct Line {
     points: Vec<Point2>,
-    mode: Mode
+    mode: Mode,
 }
 
 impl Line {
     fn new(mode: Mode) -> Self {
         Line {
             points: vec![],
-            mode: mode
+            mode: mode,
         }
     }
 
@@ -39,17 +39,16 @@ impl Line {
             }
             Mode::Fixed => {
                 for pp in self.points.iter() {
-                    draw.line()
-                        .start(*pp)
-                        .end(pt2(-pp.x, -pp.y));
+                    draw.line().start(*pp).end(pt2(-pp.x, -pp.y));
                 }
             }
             Mode::Gradient => {
                 for pp in self.points.iter() {
-                    draw.ellipse()
-                        .x_y(pp.x, pp.y)
-                        .w_h(20.0, 20.0)
-                        .rgb(0.5, 0.5, (pp.x + 300.0) / 600.0);
+                    draw.ellipse().x_y(pp.x, pp.y).w_h(20.0, 20.0).rgb(
+                        0.5,
+                        0.5,
+                        (pp.x + 300.0) / 600.0,
+                    );
                 }
             }
         }
@@ -60,7 +59,7 @@ struct Model {
     figure: Vec<Line>,
     current: Line,
     touch: bool,
-    mode: Mode
+    mode: Mode,
 }
 
 fn model(app: &App) -> Model {
@@ -77,7 +76,7 @@ fn model(app: &App) -> Model {
         figure: vec![],
         current: Line::new(Mode::YX),
         touch: false,
-        mode: Mode::YX
+        mode: Mode::YX,
     }
 }
 
@@ -93,17 +92,17 @@ fn view(app: &App, model: &Model, frame: Frame) {
 }
 
 fn mouse_pressed(_: &App, model: &mut Model, _: MouseButton) {
-    model.touch= true;
+    model.touch = true;
 }
 
 fn mouse_released(_: &App, model: &mut Model, _: MouseButton) {
-    model.touch= false;
+    model.touch = false;
     model.figure.push(model.current.clone());
     model.current = Line::new(model.mode.clone());
 }
 
 fn mouse_moved(_: &App, model: &mut Model, pos: Point2) {
-    if model.touch{
+    if model.touch {
         model.current.push(pos);
     }
 }
@@ -115,15 +114,9 @@ fn key_released(_: &App, model: &mut Model, key: Key) {
         }
         Key::T => {
             match model.mode {
-                Mode::YX => {
-                    model.mode = Mode::Fixed
-                }
-                Mode::Fixed => {
-                    model.mode = Mode::Gradient
-                }
-                Mode::Gradient => {
-                    model.mode = Mode::YX
-                }
+                Mode::YX => model.mode = Mode::Fixed,
+                Mode::Fixed => model.mode = Mode::Gradient,
+                Mode::Gradient => model.mode = Mode::YX,
             }
             model.current = Line::new(model.mode.clone());
         }
