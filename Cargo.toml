@@ -35,3 +35,7 @@ path = "animation/mouse.rs"
 [[example]]
 name = "animation-frame"
 path = "animation/frame.rs"
+
+[[example]]
+name = "animation-clock"
+path = "animation/clocks.rs"
