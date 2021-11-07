@@ -10,11 +10,11 @@ nannou = "0.17"
 
 [[example]]
 name = "hello"
-path = "src/hello_nannou.rs"
+path = "hello-world/hello_nannou.rs"
 
 [[example]]
 name = "mouse"
-path = "src/mouse-interaction.rs"
+path = "hello-world/mouse-interaction.rs"
 
 [[example]]
 name = "mouse_button"
