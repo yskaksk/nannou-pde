@@ -7,7 +7,7 @@ fn main() {
 struct Circle {
     x: f32,
     y: f32,
-    color: Rgb<u8>
+    color: Rgb<u8>,
 }
 
 impl Circle {
@@ -21,14 +21,14 @@ impl Circle {
 
 struct Model {
     touch: bool,
-    figures: Vec<Circle>
+    figures: Vec<Circle>,
 }
 
 impl Model {
     fn new() -> Self {
         Model {
             touch: false,
-            figures: vec![]
+            figures: vec![],
         }
     }
 
@@ -70,15 +70,11 @@ fn mouse_released(_: &App, model: &mut Model, _: MouseButton) {
 
 fn mouse_moved(_: &App, model: &mut Model, pos: Point2) {
     if model.touch {
-        let color = if pos.x >= 0.0 {
-            BLACK
-        } else {
-            WHITE
-        };
+        let color = if pos.x >= 0.0 { BLACK } else { WHITE };
         model.figures.push(Circle {
             x: pos.x,
             y: pos.y,
-            color
+            color,
         })
     }
 }

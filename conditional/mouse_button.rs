@@ -6,14 +6,15 @@ fn main() {
 
 #[derive(Clone)]
 struct Line {
-    points: Vec<Point2>, button: Option<MouseButton>
+    points: Vec<Point2>,
+    button: Option<MouseButton>,
 }
 
 impl Line {
     fn new(button: MouseButton) -> Self {
         Line {
             points: vec![],
-            button: Some(button)
+            button: Some(button),
         }
     }
 
@@ -26,9 +27,11 @@ impl Line {
             let color = match button {
                 MouseButton::Left => RED,
                 MouseButton::Right => BLACK,
-                _ => unimplemented!()
+                _ => unimplemented!(),
             };
-            draw.polyline().weight(2.0).points_colored(self.points.iter().map(|pp| (pt2(pp.x, pp.y), color)));
+            draw.polyline()
+                .weight(2.0)
+                .points_colored(self.points.iter().map(|pp| (pt2(pp.x, pp.y), color)));
         }
     }
 }
@@ -36,7 +39,7 @@ impl Line {
 struct Model {
     touch: bool,
     figure: Vec<Line>,
-    current: Line
+    current: Line,
 }
 
 impl Model {
@@ -44,7 +47,7 @@ impl Model {
         Model {
             touch: false,
             figure: vec![],
-            current: Line::new(MouseButton::Left)
+            current: Line::new(MouseButton::Left),
         }
     }
 }
@@ -82,7 +85,7 @@ fn mouse_released(_: &App, model: &mut Model, _: MouseButton) {
     model.figure.push(model.current.clone());
     model.current = Line {
         points: vec![],
-        button: None
+        button: None,
     }
 }
 
