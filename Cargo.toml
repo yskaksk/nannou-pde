@@ -31,3 +31,7 @@ path = "conditional/patterns.rs"
 [[example]]
 name = "animation-mouse"
 path = "animation/mouse.rs"
+
+[[example]]
+name = "animation-frame"
+path = "animation/frame.rs"
