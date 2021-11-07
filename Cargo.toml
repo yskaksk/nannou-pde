@@ -59,3 +59,7 @@ path = "variable/balloon.rs"
 [[example]]
 name = "move-balloon"
 path = "variable/moving_balloon.rs"
+
+[[example]]
+name = "line-preview"
+path = "variable/line_preview.rs"
