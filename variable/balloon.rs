@@ -1,14 +1,12 @@
 use nannou::prelude::*;
 
 fn main() {
-    nannou::app(model)
-        .update(update)
-        .run();
+    nannou::app(model).update(update).run();
 }
 
 struct Model {
     size: u32,
-    touch: bool
+    touch: bool,
 }
 
 fn model(app: &App) -> Model {
@@ -21,7 +19,7 @@ fn model(app: &App) -> Model {
         .unwrap();
     Model {
         size: 100,
-        touch: false
+        touch: false,
     }
 }
 

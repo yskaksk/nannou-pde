@@ -6,7 +6,7 @@ fn main() {
 
 struct Model {
     x: f32,
-    y: f32
+    y: f32,
 }
 
 fn model(app: &App) -> Model {
@@ -16,10 +16,7 @@ fn model(app: &App) -> Model {
         .key_pressed(key_pressed)
         .build()
         .unwrap();
-    Model {
-        x: 0.0,
-        y: 0.0
-    }
+    Model { x: 0.0, y: 0.0 }
 }
 
 fn view(app: &App, model: &Model, frame: Frame) {

@@ -16,15 +16,11 @@ impl Line {
     }
 
     fn draw(&self, draw: &Draw) {
-        let weight = if self.mode == 3 {
-            20.0
-        } else {
-            2.0
-        };
+        let weight = if self.mode == 3 { 20.0 } else { 2.0 };
         draw.polyline().weight(weight).points_colored(
-            self.points.iter().map(
-                |pp| (pt2(pp.x, pp.y), get_color(self.mode))
-            )
+            self.points
+                .iter()
+                .map(|pp| (pt2(pp.x, pp.y), get_color(self.mode))),
         );
     }
 }
@@ -38,13 +34,13 @@ fn get_color(mode: u8) -> Rgb<u8> {
         RED
     } else {
         WHITE
-    }
+    };
 }
 
 struct Model {
     figure: Vec<Line>,
     current_line: Option<Line>,
-    mode: u8
+    mode: u8,
 }
 
 impl Model {
@@ -71,7 +67,7 @@ fn model(app: &App) -> Model {
     Model {
         figure: vec![],
         current_line: None,
-        mode: 0
+        mode: 0,
     }
 }
 
@@ -102,7 +98,7 @@ fn mouse_pressed(_: &App, model: &mut Model, button: MouseButton) {
         MouseButton::Left => {
             model.current_line = Some(Line {
                 points: vec![],
-                mode: model.mode
+                mode: model.mode,
             });
         }
         _ => {}

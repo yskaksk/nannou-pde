@@ -5,7 +5,7 @@ fn main() {
 }
 
 struct Model {
-    on: bool
+    on: bool,
 }
 
 fn model(app: &App) -> Model {
@@ -15,9 +15,7 @@ fn model(app: &App) -> Model {
         .view(view)
         .build()
         .unwrap();
-    Model {
-        on: true
-    }
+    Model { on: true }
 }
 
 fn view(app: &App, model: &Model, frame: Frame) {
@@ -32,16 +30,10 @@ fn view(app: &App, model: &Model, frame: Frame) {
             .x_y(0.0, 0.0)
             .radius(150.0)
             .rgb8(240, 230, 140);
-        draw.ellipse()
-            .x_y(0.0, 0.0)
-            .radius(120.0)
-            .rgb8(255, 215, 0);
+        draw.ellipse().x_y(0.0, 0.0).radius(120.0).rgb8(255, 215, 0);
     } else {
         draw.background().color(BLACK);
-        draw.ellipse()
-            .x_y(0.0, 0.0)
-            .radius(150.0)
-            .rgb8(25, 25, 25);
+        draw.ellipse().x_y(0.0, 0.0).radius(150.0).rgb8(25, 25, 25);
     }
     draw.to_frame(app, &frame).unwrap();
 }

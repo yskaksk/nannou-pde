@@ -1,26 +1,17 @@
 use nannou::prelude::*;
 
 fn main() {
-    nannou::app(model)
-        .update(update)
-        .run();
+    nannou::app(model).update(update).run();
 }
 
 struct Model {
     x: f32,
-    y: f32
+    y: f32,
 }
 
 fn model(app: &App) -> Model {
-    app.new_window()
-        .size(600, 600)
-        .view(view)
-        .build()
-        .unwrap();
-    Model {
-        x: 0.0,
-        y: 0.0
-    }
+    app.new_window().size(600, 600).view(view).build().unwrap();
+    Model { x: 0.0, y: 0.0 }
 }
 
 fn view(app: &App, model: &Model, frame: Frame) {

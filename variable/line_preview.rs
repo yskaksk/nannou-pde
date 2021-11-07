@@ -7,7 +7,7 @@ fn main() {
 struct Model {
     x: f32,
     y: f32,
-    clicked: bool
+    clicked: bool,
 }
 
 fn model(app: &App) -> Model {
@@ -21,7 +21,7 @@ fn model(app: &App) -> Model {
     Model {
         x: 0.0,
         y: 0.0,
-        clicked: false
+        clicked: false,
     }
 }
 
@@ -29,7 +29,7 @@ fn view(app: &App, model: &Model, frame: Frame) {
     let draw = app.draw();
     draw.background().color(WHITE);
     if model.clicked {
-        let mouse  = app.mouse;
+        let mouse = app.mouse;
         draw.ellipse()
             .x_y(model.x, model.y)
             .radius(5.0)
