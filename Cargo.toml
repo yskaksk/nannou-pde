@@ -51,3 +51,27 @@ path = "random/brush.rs"
 [[example]]
 name = "random-shudder"
 path = "random/shudder.rs"
+
+[[example]]
+name = "balloon"
+path = "variable/balloon.rs"
+
+[[example]]
+name = "move-balloon"
+path = "variable/moving_balloon.rs"
+
+[[example]]
+name = "line-preview"
+path = "variable/line_preview.rs"
+
+[[example]]
+name = "bool-light"
+path = "variable/bool_light.rs"
+
+[[example]]
+name = "random-walk"
+path = "variable/random_walk.rs"
+
+[[example]]
+name = "multi-pen"
+path = "variable/multi_pen.rs"
