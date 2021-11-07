@@ -8,7 +8,7 @@ fn main() {
 struct Model {
     hour: u64,
     minute: u64,
-    second: u64
+    second: u64,
 }
 
 fn model(app: &App) -> Model {
@@ -21,7 +21,7 @@ fn model(app: &App) -> Model {
     Model {
         hour: 0,
         minute: 0,
-        second: 0
+        second: 0,
     }
 }
 

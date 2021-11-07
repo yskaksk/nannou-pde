@@ -28,4 +28,3 @@ fn view(app: &App, _: &Model, frame: Frame) {
         .rgb(0.5, 0.5, 0.8);
     draw.to_frame(app, &frame).unwrap();
 }
-
