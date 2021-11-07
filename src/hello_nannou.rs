@@ -20,26 +20,11 @@ fn view(app: &App, _model: &Model, frame: Frame) {
         .rgb(0.7, 0.7, 0.7)
         .stroke(BLACK);
 
-    draw.ellipse()
-        .x_y(70.0, 70.0)
-        .w_h(45.0, 45.0)
-        .color(BLACK);
-    draw.ellipse()
-        .x_y(80.0, 80.0)
-        .w_h(15.0, 15.0)
-        .color(WHITE);
-    draw.ellipse()
-        .x_y(-70.0, 70.0)
-        .w_h(45.0, 45.0)
-        .color(BLACK);
-    draw.ellipse()
-        .x_y(-60.0, 80.0)
-        .w_h(15.0, 15.0)
-        .color(WHITE);
-    draw.ellipse()
-        .x_y(0.0, -70.0)
-        .w_h(80.0, 80.0)
-        .color(RED);
+    draw.ellipse().x_y(70.0, 70.0).w_h(45.0, 45.0).color(BLACK);
+    draw.ellipse().x_y(80.0, 80.0).w_h(15.0, 15.0).color(WHITE);
+    draw.ellipse().x_y(-70.0, 70.0).w_h(45.0, 45.0).color(BLACK);
+    draw.ellipse().x_y(-60.0, 80.0).w_h(15.0, 15.0).color(WHITE);
+    draw.ellipse().x_y(0.0, -70.0).w_h(80.0, 80.0).color(RED);
 
     draw.to_frame(app, &frame).unwrap();
 }
