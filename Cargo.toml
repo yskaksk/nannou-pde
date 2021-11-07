@@ -15,3 +15,15 @@ path = "src/hello_nannou.rs"
 [[example]]
 name = "mouse"
 path = "src/mouse-interaction.rs"
+
+[[example]]
+name = "mouse_button"
+path = "conditional/mouse_button.rs"
+
+[[example]]
+name = "second_pen"
+path = "conditional/second_pen.rs"
+
+[[example]]
+name = "patterns"
+path = "conditional/patterns.rs"
