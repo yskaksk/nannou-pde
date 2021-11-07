@@ -43,3 +43,7 @@ path = "animation/clocks.rs"
 [[example]]
 name = "random-circles"
 path = "random/random-circles.rs"
+
+[[example]]
+name = "random-brush"
+path = "random/brush.rs"
