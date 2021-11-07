@@ -67,3 +67,7 @@ path = "variable/line_preview.rs"
 [[example]]
 name = "bool-light"
 path = "variable/bool_light.rs"
+
+[[example]]
+name = "random-walk"
+path = "variable/random_walk.rs"
