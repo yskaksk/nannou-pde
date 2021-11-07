@@ -47,3 +47,7 @@ path = "random/random-circles.rs"
 [[example]]
 name = "random-brush"
 path = "random/brush.rs"
+
+[[example]]
+name = "random-shudder"
+path = "random/shudder.rs"
