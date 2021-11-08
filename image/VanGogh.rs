@@ -9,14 +9,12 @@ struct Model {
 }
 
 fn model(app: &App) -> Model {
-    app.new_window()
-        .size(800, 800)
-        .view(view)
-        .build()
-        .unwrap();
+    app.new_window().size(800, 800).view(view).build().unwrap();
     let assets = app.assets_path().unwrap();
     let img_path = assets.join("images").join("VanGogh.jpg");
-    Model { texture: wgpu::Texture::from_path(app, img_path).unwrap() }
+    Model {
+        texture: wgpu::Texture::from_path(app, img_path).unwrap(),
+    }
 }
 
 fn view(app: &App, model: &Model, frame: Frame) {
