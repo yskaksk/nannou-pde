@@ -75,3 +75,19 @@ path = "variable/random_walk.rs"
 [[example]]
 name = "multi-pen"
 path = "variable/multi_pen.rs"
+
+[[example]]
+name = "ripple"
+path = "iteration/ripple.rs"
+
+[[example]]
+name = "ripple-more"
+path = "iteration/ripple_more.rs"
+
+[[example]]
+name = "brush"
+path = "iteration/brush.rs"
+
+[[example]]
+name = "grunge"
+path = "iteration/grunge.rs"
