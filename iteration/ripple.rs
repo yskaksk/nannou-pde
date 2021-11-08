@@ -5,7 +5,7 @@ fn main() {
 }
 
 struct Model {
-    points: Vec<Point2>
+    points: Vec<Point2>,
 }
 
 fn model(app: &App) -> Model {
@@ -14,9 +14,7 @@ fn model(app: &App) -> Model {
         .view(view)
         .build()
         .unwrap();
-    Model {
-        points: vec![]
-    }
+    Model { points: vec![] }
 }
 
 fn mouse_pressed(app: &App, model: &mut Model, _: MouseButton) {
@@ -31,9 +29,7 @@ fn circle(draw: &Draw, x: f32, y: f32, radius: f32) {
         let y_loc = rad.cos() * radius + y;
         (pt2(x_loc, y_loc), BLACK)
     });
-    draw.polyline()
-        .weight(2.0)
-        .points_colored(points);
+    draw.polyline().weight(2.0).points_colored(points);
 }
 
 fn view(app: &App, model: &Model, frame: Frame) {

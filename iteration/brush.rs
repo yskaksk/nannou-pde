@@ -6,14 +6,14 @@ fn main() {
 
 struct Model {
     touch: bool,
-    clear: bool
+    clear: bool,
 }
 
 impl Model {
     fn new() -> Self {
         Model {
             touch: false,
-            clear: false
+            clear: false,
         }
     }
 }

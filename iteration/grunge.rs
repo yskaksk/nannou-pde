@@ -5,14 +5,12 @@ fn main() {
 }
 
 struct Model {
-    touch: bool
+    touch: bool,
 }
 
 impl Model {
     fn new() -> Self {
-        Model {
-            touch: false
-        }
+        Model { touch: false }
     }
 }
 
