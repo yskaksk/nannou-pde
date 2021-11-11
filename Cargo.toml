@@ -103,3 +103,7 @@ path = "image/stamp.rs"
 [[example]]
 name = "image-pen"
 path = "image/image_pen.rs"
+
+[[example]]
+name = "grid-1d"
+path = "grid/grid_1d.rs"
