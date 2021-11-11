@@ -99,3 +99,7 @@ path = "image/VanGogh.rs"
 [[example]]
 name = "stamp"
 path = "image/stamp.rs"
+
+[[example]]
+name = "image-pen"
+path = "image/image_pen.rs"
