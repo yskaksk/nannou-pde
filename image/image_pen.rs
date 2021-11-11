@@ -1,5 +1,5 @@
-use nannou::prelude::*;
 use nannou::image::{self, GenericImageView};
+use nannou::prelude::*;
 
 fn main() {
     nannou::app(model).run();
@@ -10,7 +10,7 @@ struct Model {
     image: image::ImageBuffer<image::Rgb<u8>, Vec<u8>>,
     entered: bool,
     w: u32,
-    h: u32
+    h: u32,
 }
 
 fn model(app: &App) -> Model {
@@ -28,7 +28,8 @@ fn model(app: &App) -> Model {
         texture: wgpu::Texture::from_image(app, &img),
         image: img.to_rgb8(),
         entered: false,
-        w, h
+        w,
+        h,
     }
 }
 
@@ -37,7 +38,7 @@ fn view(app: &App, model: &Model, frame: Frame) {
     if frame.nth() == 0 {
         draw.texture(&model.texture).x_y(0.0, 0.0);
     }
-    let mouse  = app.mouse;
+    let mouse = app.mouse;
     let wr = app.window_rect();
     let px = map_range(mouse.x.floor(), wr.x.start, wr.x.end, 0, model.w);
     let py = map_range(mouse.y.floor(), wr.y.start, wr.y.end, 0, model.h);

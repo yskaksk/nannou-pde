@@ -10,10 +10,7 @@ struct Model {
 }
 
 fn model(app: &App) -> Model {
-    app.new_window()
-        .size(800, 800)
-        .build()
-        .unwrap();
+    app.new_window().size(800, 800).build().unwrap();
     let assets = app.assets_path().unwrap();
     let img_path_l = assets.join("images").join("stamp.png");
     let img_path_r = assets.join("images").join("stamp2.png");
@@ -30,10 +27,14 @@ fn view(app: &App, model: &Model, frame: Frame) {
     }
     let mouse = app.mouse;
     if mouse.buttons.left().is_down() {
-        draw.texture(&model.texture_left).x_y(mouse.x, mouse.y).w_h(100.0, 100.0);
+        draw.texture(&model.texture_left)
+            .x_y(mouse.x, mouse.y)
+            .w_h(100.0, 100.0);
     }
     if mouse.buttons.right().is_down() {
-        draw.texture(&model.texture_right).x_y(mouse.x, mouse.y).w_h(100.0, 100.0);
+        draw.texture(&model.texture_right)
+            .x_y(mouse.x, mouse.y)
+            .w_h(100.0, 100.0);
     }
     draw.to_frame(app, &frame).unwrap();
 }
