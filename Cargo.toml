@@ -91,3 +91,15 @@ path = "iteration/brush.rs"
 [[example]]
 name = "grunge"
 path = "iteration/grunge.rs"
+
+[[example]]
+name = "gogh"
+path = "image/VanGogh.rs"
+
+[[example]]
+name = "stamp"
+path = "image/stamp.rs"
+
+[[example]]
+name = "image-pen"
+path = "image/image_pen.rs"
