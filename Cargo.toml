@@ -111,3 +111,11 @@ path = "grid/grid_1d.rs"
 [[example]]
 name = "gradient-1d"
 path = "grid/gradient_1d.rs"
+
+[[example]]
+name = "grid-2d"
+path = "grid/grid_2d.rs"
+
+[[example]]
+name = "gradient-2d"
+path = "grid/gradient_2d.rs"
