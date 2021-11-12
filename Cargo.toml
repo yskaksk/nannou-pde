@@ -131,3 +131,7 @@ path = "grid/grid_image.rs"
 [[example]]
 name = "gradient-hsb"
 path = "color/gradient_hsb.rs"
+
+[[example]]
+name = "color-random"
+path = "color/random.rs"
