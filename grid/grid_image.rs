@@ -15,14 +15,11 @@ fn model(app: &App) -> Model {
     let assets = app.assets_path().unwrap();
     let img = image::open(assets.join("images").join("VanGogh.jpg")).unwrap();
     let (w, h) = img.dimensions();
-    app.new_window()
-        .size(w, h)
-        .view(view)
-        .build()
-        .unwrap();
+    app.new_window().size(w, h).view(view).build().unwrap();
     Model {
         image: img.to_rgb8(),
-        w, h
+        w,
+        h,
     }
 }
 
@@ -34,11 +31,11 @@ fn view(app: &App, model: &Model, frame: Frame) {
         draw.background().color(BLACK);
     }
     for i in 0..n {
-        let px = map_range(i, 0, n-1, 0, model.w-1);
-        let x = map_range(i, 0, n-1, win.left(), win.right());
+        let px = map_range(i, 0, n - 1, 0, model.w - 1);
+        let x = map_range(i, 0, n - 1, win.left(), win.right());
         for j in 0..n {
-            let py = map_range(j, 0, n-1, 0, model.h-1);
-            let y = map_range(j, 0, n-1, win.top(), win.bottom());
+            let py = map_range(j, 0, n - 1, 0, model.h - 1);
+            let y = map_range(j, 0, n - 1, win.top(), win.bottom());
             let pixel = model.image.get_pixel(px, py);
             draw.ellipse()
                 .x_y(x, y)

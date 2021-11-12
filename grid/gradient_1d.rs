@@ -9,7 +9,7 @@ fn view(app: &App, frame: Frame) {
     let win = app.window_rect();
     let n = 1000;
     for i in 0..n {
-        let x = map_range(i, 0, n-1, win.right(), win.left());
+        let x = map_range(i, 0, n - 1, win.right(), win.left());
         let cs = map_range(x, win.right(), win.left(), 0.0, 1.0);
         draw.rect()
             .x_y(x, 0.0)
