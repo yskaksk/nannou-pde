@@ -103,3 +103,27 @@ path = "image/stamp.rs"
 [[example]]
 name = "image-pen"
 path = "image/image_pen.rs"
+
+[[example]]
+name = "grid-1d"
+path = "grid/grid_1d.rs"
+
+[[example]]
+name = "gradient-1d"
+path = "grid/gradient_1d.rs"
+
+[[example]]
+name = "grid-2d"
+path = "grid/grid_2d.rs"
+
+[[example]]
+name = "gradient-2d"
+path = "grid/gradient_2d.rs"
+
+[[example]]
+name = "grid-mouse"
+path= "grid/grid_mouse.rs"
+
+[[example]]
+name = "grid-image"
+path = "grid/grid_image.rs"
