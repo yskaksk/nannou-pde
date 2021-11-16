@@ -8,7 +8,7 @@ fn main() {
 }
 
 struct Model {
-    ratio: HashMap<(u8, u8, u8), f32>
+    ratio: HashMap<(u8, u8, u8), f32>,
 }
 
 fn model(app: &App) -> Model {
@@ -39,14 +39,8 @@ fn model(app: &App) -> Model {
     for (k, v) in colormap.into_iter() {
         color_ratio.insert(k, v as f32 / sum as f32);
     }
-    app.new_window()
-        .size(800, 800)
-        .view(view)
-        .build()
-        .unwrap();
-    return Model {
-        ratio: color_ratio
-    }
+    app.new_window().size(800, 800).view(view).build().unwrap();
+    return Model { ratio: color_ratio };
 }
 
 fn view(app: &App, model: &Model, frame: Frame) {
@@ -58,22 +52,50 @@ fn view(app: &App, model: &Model, frame: Frame) {
         let y_counts = (win.h() / d).ceil() as i32;
         let color_fn = color_fn_gen(&model.ratio);
         for i in 0..x_counts {
-            let x = map_range(i, 0, x_counts-1, win.left() + d / 2.0, win.right() - d / 2.0);
+            let x = map_range(
+                i,
+                0,
+                x_counts - 1,
+                win.left() + d / 2.0,
+                win.right() - d / 2.0,
+            );
             for j in 0..y_counts {
-                let y = map_range(j, 0, y_counts-1, win.bottom() + d / 2.0, win.top() - d / 2.0);
+                let y = map_range(
+                    j,
+                    0,
+                    y_counts - 1,
+                    win.bottom() + d / 2.0,
+                    win.top() - d / 2.0,
+                );
                 if random_f32() > 0.5 {
                     draw.tri()
-                        .points(pt2(x - d / 2.0, y + d / 2.0), pt2(x - d / 2.0, y - d / 2.0), pt2(x + d / 2.0, y - d / 2.0))
+                        .points(
+                            pt2(x - d / 2.0, y + d / 2.0),
+                            pt2(x - d / 2.0, y - d / 2.0),
+                            pt2(x + d / 2.0, y - d / 2.0),
+                        )
                         .color(color_fn());
                     draw.tri()
-                        .points(pt2(x - d / 2.0, y + d / 2.0), pt2(x + d / 2.0, y + d / 2.0), pt2(x + d / 2.0, y - d / 2.0))
+                        .points(
+                            pt2(x - d / 2.0, y + d / 2.0),
+                            pt2(x + d / 2.0, y + d / 2.0),
+                            pt2(x + d / 2.0, y - d / 2.0),
+                        )
                         .color(color_fn());
                 } else {
                     draw.tri()
-                        .points(pt2(x + d / 2.0, y + d / 2.0), pt2(x - d / 2.0, y + d / 2.0), pt2(x - d / 2.0, y - d / 2.0))
+                        .points(
+                            pt2(x + d / 2.0, y + d / 2.0),
+                            pt2(x - d / 2.0, y + d / 2.0),
+                            pt2(x - d / 2.0, y - d / 2.0),
+                        )
                         .color(color_fn());
                     draw.tri()
-                        .points(pt2(x + d / 2.0, y + d / 2.0), pt2(x + d / 2.0, y - d / 2.0), pt2(x - d / 2.0, y - d / 2.0))
+                        .points(
+                            pt2(x + d / 2.0, y + d / 2.0),
+                            pt2(x + d / 2.0, y - d / 2.0),
+                            pt2(x - d / 2.0, y - d / 2.0),
+                        )
                         .color(color_fn());
                 }
             }
@@ -101,9 +123,9 @@ fn color_fn_gen<'a>(ratio: &'a HashMap<(u8, u8, u8), f32>) -> impl Fn() -> rgb::
         for (k, v) in ratio.clone().into_iter() {
             s += v;
             if r < s {
-                return rgb::Rgb::new(k.0 as f32 / 256.0, k.1 as f32 / 256.0, k.2 as f32 / 256.0)
+                return rgb::Rgb::new(k.0 as f32 / 256.0, k.1 as f32 / 256.0, k.2 as f32 / 256.0);
             }
         }
-        return rgb::Rgb::new(1.0, 1.0, 1.0)
+        return rgb::Rgb::new(1.0, 1.0, 1.0);
     }
 }
