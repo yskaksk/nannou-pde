@@ -135,3 +135,19 @@ path = "color/gradient_hsb.rs"
 [[example]]
 name = "color-random"
 path = "color/random.rs"
+
+[[example]]
+name = "color-weak-random"
+path = "color/weak_random.rs"
+
+[[example]]
+name = "fix-hue"
+path = "color/fix_hue.rs"
+
+[[example]]
+name = "rgb"
+path = "color/rgb.rs"
+
+[[example]]
+name = "color-image"
+path = "color/image.rs"
