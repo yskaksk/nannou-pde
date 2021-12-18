@@ -151,3 +151,11 @@ path = "color/rgb.rs"
 [[example]]
 name = "color-image"
 path = "color/image.rs"
+
+[[example]]
+name = "random-walk2"
+path = "array/random_walk2.rs"
+
+[[example]]
+name = "random-walk-colorful"
+path = "array/random_walk_colorful.rs"
